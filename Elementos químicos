@@ -1,0 +1,27 @@
+elementos_quimicos = {
+    "H": {"numero_atomico": 1, "nome": "Hidrogênio", "massa": 1.008},
+    "He": {"numero_atomico": 2, "nome": "Hélio", "massa": 4.0026},
+    "Li": {"numero_atomico": 3, "nome": "Lítio", "massa": 6.94},
+}
+
+# Função para buscar informações do elemento
+def buscar_elemento(sigla):
+    elemento = elementos_quimicos.get(sigla)
+    if elemento:
+        numero_atomico = elemento["numero_atomico"]
+        nome = elemento["nome"]
+        massa = elemento["massa"]
+        print(f"Elemento: {sigla}")
+        print(f"Número Atômico: {numero_atomico}")
+        print(f"Nome: {nome}")
+        print(f"Massa: {massa}")
+    else:
+        print("Elemento não encontrado.")
+
+# Função principal
+def main():
+    sigla = input("Digite a sigla do elemento químico: ").capitalize()
+    buscar_elemento(sigla)
+
+if __name__ == "__main__":
+    main()
